@@ -1,0 +1,1 @@
+g++ -Wall -Werror -ansi -std=c++17 -o out/oper oper.C
