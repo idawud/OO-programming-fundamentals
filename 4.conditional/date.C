@@ -94,7 +94,7 @@ int main(){
 		}
 	}
 
-	if( date2.year % 4 == 0 && date2.year % 100 == 0 && date2.year % 400 == 0) {
+	if( (date2.year % 4 == 0 && date2.year % 400 == 0) || date2.year % 100 == 0) {
 		std::cout << "This is a leap year!\n";
 	}
 	else {

@@ -24,27 +24,43 @@ int main(){
 	date2.day = 25;
 	
 	if( date1.year > date2.year){ 
-		std::cout << date.year << "-" << date.month << "-" << date.day << std::endl;
+		std::cout << date1.year << "-" << date1.month << "-" << date1.day << std::endl;
 	}
 	else if ( date2.year > date1.year) { 
-	std::cout << date.year << "-" << date.month << "-" << date.day << std::endl;
+		std::cout << date2.year << "-" << date2.month << "-" << date2.day << std::endl;
 	}
 	else{
-		if( date1.month > date2.month){ printDate(date1);}
-		else if ( date2.month > date1.month) { printDate(date2); }
+		if( date1.month > date2.month){ 
+			std::cout << date1.year << "-" << date1.month << "-" << date1.day << std::endl;
+		}
+		else if ( date2.month > date1.month) {
+			std::cout << date2.year << "-" << date2.month << "-" << date2.day << std::endl;
+		}
 		else{
-			if( date1.day > date2.day){ printDate(date1);}
-			else if ( date2.day > date1.day) { printDate(date2); }
+			if( date1.day > date2.day){
+				std::cout << date1.year << "-" << date1.month << "-" << date1.day << std::endl;
+			}
+			else if ( date2.day > date1.day) {
+				std::cout << date2.year << "-" << date2.month << "-" << date2.day << std::endl;
+			}
 			else{
 				std::cout << "SAME DATES\n";
 			}
 		}
 	}
+	
+	Date date3 {};
+	date3.year = 2008; 
+	date3.month = 8; 
+	date3.day = 5;
 
-	std::vector<Date> dates {date1, date2, Date {2008,8,5}};
-	printDate(dates[1]);
-	dates[1].year = 1984,2,28};
-	printDate(dates[1]);
+	std::vector<Date> dates {date1, date2, date3}; 
+	std::cout << dates[1].year << "-" << dates[1].month << "-" << dates[1].day << std::endl;
+	dates[1].year = 1984;
+	dates[1].month = 2;
+	dates[1].day = 28;
+	
+	std::cout << dates[1].year << "-" << dates[1].month << "-" << dates[1].day << std::endl;
 	
 	auto now = std::chrono::system_clock::now();
 	auto now_c = std::chrono::system_clock::to_time_t(now);
