@@ -48,4 +48,11 @@ int main(){
 
 	dateStatus(my_birthday, date);
 
+	if( date.year % 4 == 0 && date.year % 100 == 0 && date.year % 400 == 0) {
+		std::cout << "This is a leap year!\n";
+	}
+	else {
+		std::cout << "This is NOT a leap year!\n";
+	}
+
 }
