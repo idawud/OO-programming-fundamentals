@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 struct Date{
 	int year;
@@ -8,7 +9,7 @@ struct Date{
 };
  
 void niceDate(Date date){
-	std::string postfix; 
+	std::string postfix;
 	if( date.day == 11 || date.day == 12 || date.day == 13) { postfix = "th"; }
 	else if ( date.day == 1 || date.day == 21 || date.day == 31 ) { postfix = "st"; }
 	else if ( date.day == 2 || date.day == 22 ) { postfix = "nd"; }
@@ -64,42 +65,46 @@ int main(){
 	date1.day = 25;
 	
 	Date date2 {};
+	date2.year = 2003;
+	date2.month = 6;
+	date2.day = 6;
 
-	std::cout << "Enter a year, month and day: ";
-	std::cin >> date2.year >> date2.month >> date2.day;
+	Date date3 {};
+	date3.year = 1984;
+	date3.month = 2;
+	date3.day = 28;
 	
-	if( date1.year > date2.year){ 
-		std::cout << "Before \n";
+	std::cout << "Problem 1:\n";
+	std::vector<Date> dateObjects { date1, date2, date3 };
+	for( auto date : dateObjects) {
+		niceDate(date);
 	}
-	else if ( date1.year < date2.year) { 
-		std::cout << "After\n";
-	}
-	else{
-		if( date1.month > date2.month){
-			std::cout << "Before\n";
-		}
-		else if ( date1.month < date2.month) { 
-			std::cout << "After\n";
-		}
-		else{
-			if( date1.day > date2.day){
-				std::cout << "Before\n";
-			}
-			else if ( date2.day > date1.day) {
-				std::cout << "After\n";
-			 }
-			else{
-				std::cout << "Current Date\n";
-			}
+	
+	std::cout <<"\nProblem 2:\n";
+	Date earliest {dateObjects[0]};
+	for(int i = 1; i < 3; ++i) {
+		if ( earliest.year > dateObjects[i].year) {
+			earliest = dateObjects[i];
 		}
 	}
 
-	if( date2.year % 4 == 0 && date2.year % 100 == 0 && date2.year % 400 == 0) {
-		std::cout << "This is a leap year!\n";
-	}
-	else {
-		std::cout << "This is NOT a leap year!\n";
+	std::cout << "The earliest date is: ";
+	niceDate(earliest);	
+	
+	std::cout << "\nProblem 3:\n";
+	for(auto date : dateObjects){
+		int count = 0;
+		while( count < 3) {
+			niceDate(date);
+			++count;
+		}
 	}
 	
-	niceDate(date2);		
+	std::cout << "\nProblem 4:\n";	
+	for (int i = 0; i < 3; ++i){
+		for( auto date : dateObjects){
+			niceDate(date);
+		}
+	}
+
 }

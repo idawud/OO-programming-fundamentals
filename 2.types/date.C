@@ -10,14 +10,25 @@ struct Date{
 	int day;
 };
 
-
-void printDate(Date date){
+  
+	
+int main(){
+	Date date1 {};
+	date1.year = 1996; 
+	date1.month = 4; 
+	date1.day = 25;
+	
+	Date date2 {};
+	date2.year = 1906; 
+	date2.month = 4; 
+	date2.day = 25;
+	
+	if( date1.year > date2.year){ 
+		std::cout << date.year << "-" << date.month << "-" << date.day << std::endl;
+	}
+	else if ( date2.year > date1.year) { 
 	std::cout << date.year << "-" << date.month << "-" << date.day << std::endl;
-}
-
-void printLaterDate(Date date1, Date date2){
-	if( date1.year > date2.year){ printDate(date1);}
-	else if ( date2.year > date1.year) { printDate(date2); }
+	}
 	else{
 		if( date1.month > date2.month){ printDate(date1);}
 		else if ( date2.month > date1.month) { printDate(date2); }
@@ -29,19 +40,10 @@ void printLaterDate(Date date1, Date date2){
 			}
 		}
 	}
-}
 
-	
-int main(){
-	Date birthday {1996,4,25};
-	//birthday.year = 1996; //birthday.month = 4; //birthday.day = 25;
-	
-	Date anotherDate {2019, 5, 25};
-	printLaterDate(birthday, anotherDate);
-
-	std::vector<Date> dates {birthday, anotherDate, Date {2008,8,5}};
+	std::vector<Date> dates {date1, date2, Date {2008,8,5}};
 	printDate(dates[1]);
-	dates[1] = {1984,2,28};
+	dates[1].year = 1984,2,28};
 	printDate(dates[1]);
 	
 	auto now = std::chrono::system_clock::now();
