@@ -75,16 +75,16 @@ int main(){
 	date3.day = 28;
 	
 	std::cout << "Problem 1:\n";
-	std::vector<Date> dateObjects { date1, date2, date3 };
-	for( auto date : dateObjects) {
+	std::vector<Date> dates { date1, date2, date3 };
+	for( auto date : dates) {
 		niceDate(date);
 	}
 	
 	std::cout <<"\nProblem 2:\n";
-	Date earliest {dateObjects[0]};
+	Date earliest {dates[0]};
 	for(int i = 1; i < 3; ++i) {
-		if ( earliest.year > dateObjects[i].year) {
-			earliest = dateObjects[i];
+		if ( earliest.year > dates[i].year) {
+			earliest = dates[i];
 		}
 	}
 
@@ -92,7 +92,7 @@ int main(){
 	niceDate(earliest);	
 	
 	std::cout << "\nProblem 3:\n";
-	for(auto date : dateObjects){
+	for(auto date : dates){
 		int count = 0;
 		while( count < 3) {
 			niceDate(date);
@@ -102,7 +102,7 @@ int main(){
 	
 	std::cout << "\nProblem 4:\n";	
 	for (int i = 0; i < 3; ++i){
-		for( auto date : dateObjects){
+		for( auto date : dates){
 			niceDate(date);
 		}
 	}
