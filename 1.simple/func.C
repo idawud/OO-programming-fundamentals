@@ -10,16 +10,16 @@ int getnum(){
 }
 
 int main(){  
-	int x = getnum();
-	int y = getnum();
-	int result = x + y;
+	int x { getnum() };
+	int y { getnum() };
+	int result {x + y};
 
-	int counter = 0;
+	int counter {0};
 	std::cout<< "The sum of the two numbers is: ";
 	
 	while(counter < 3){ 
 		std::cout<< result << " ";
-		counter++;
+		++counter;
 	} 
 
 	std::cout << std::endl;

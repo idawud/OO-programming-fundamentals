@@ -5,7 +5,7 @@ int main(){
 	std::cout << "2 squared =  " << (2  << 1) << std::endl;
 
 	std::cout << "\nProblem 2:\n";
-	int i { 0};
+	int i {0};
  	++i; ++i;
 	std::cout << i << std::endl;
 
@@ -19,7 +19,7 @@ int main(){
 	
 	// casting
 	std::cout << "\nProblem 5:\n";
-	float f = 9.8f;
+	float f {9.8f};
 	i = static_cast<int>(f);
 	k = (int) f;
 	std::cout << i << " {} " << k << std::endl;
