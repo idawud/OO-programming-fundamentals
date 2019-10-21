@@ -1,0 +1,2 @@
+g++ -I . -L . -o output Date.o useDate.C // linking the two
+g++ -I . -L . -c  Date.C // generating object file

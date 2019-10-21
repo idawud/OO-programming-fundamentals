@@ -67,7 +67,7 @@ Date getDate(int day, int month, int year){
 	return date;
 }
 
-Date max(Date &date1, Date &date2){
+Date max(Date date1, Date date2){
 	if( date1.year > date2.year){ 
 		return date1;
 	}
