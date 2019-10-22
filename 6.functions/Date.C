@@ -2,12 +2,6 @@
 #include <iostream>
 #include <string>
 
-struct Date{
-	int year;
-	int month;
-	int day;
-};
- 
 void prettyprint(Date date){
 	std::string postfix;
 	if( date.day == 11 || date.day == 12 || date.day == 13) { postfix = "th"; }

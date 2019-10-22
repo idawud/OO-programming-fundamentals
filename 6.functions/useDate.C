@@ -2,12 +2,6 @@
 #include <vector>
 #include <Date.H>
  
-struct Date{
-	int year;
-	int month;
-	int day;
-};
-
 int main() { 
 	Date date1 {};
 	date1.year = 1996;
