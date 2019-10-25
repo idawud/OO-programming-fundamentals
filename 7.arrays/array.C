@@ -23,24 +23,19 @@ void printMatrixThreeDim (int matrix [][2][3], int n){
 }
 
 
-int getCharCount(char *value){
-    int count = 0; 
-    for(int i = 0; value[i] != '\0'; ++i) { 
+int getCharsCount(const char *value){
+    int count = 0;  
+    for(int t = 0; value[t] != '\0'; ++t) { 
         ++count;
     } 
     return count;  
 }
 
-char* longestChar(  char* sequence1,   char*  sequence2){    
-    int seq1 = getCharCount(sequence1);
-    int seq2 = getCharCount(sequence2); 
-
-    if ( seq1 >= seq2){ 
+const char* longestChars(const  char* sequence1, const  char*  sequence2){      
+    if ( getCharsCount(sequence1) >= getCharsCount(sequence2)){ 
         return  sequence1; 
-    }
-    else{ 
-        return sequence2;
-    }  
+    } 
+    return sequence2; 
 }
 
 
@@ -59,10 +54,9 @@ int main(){
 	printMatrixThreeDim(mat,2);
 
 	//Problem 4
-	char turntabl[] {'t', 'u', 'r', 'n', 't','a', 'b','l'};
-	char dawud[] {'d', 'a', 'w', 'u', 'd'};
+	char turntabl[] {'t', 'u', 'r', 'n', 't','a', 'b','l', '\0'}; 
+    char dawud[] {'d', 'a', 'w', 'u', 'd','\0'}; 
 
-    	auto result = longestChar( turntabl,dawud);
-    	std::cout << "The longest char * is: " <<  result << "\n";	
+    std::cout << "The longest char * is: " <<  longestChars( turntabl, dawud) << std::endl; 	
 
 }

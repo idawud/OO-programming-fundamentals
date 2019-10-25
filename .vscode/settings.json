@@ -48,6 +48,7 @@
         "date.C": "cpp",
         "func.C": "cpp",
         "sum.C": "cpp",
-        "mult.C": "cpp"
+        "mult.C": "cpp",
+        "array.C": "cpp"
     }
 }
