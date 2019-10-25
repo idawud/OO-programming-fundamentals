@@ -55,8 +55,7 @@ int main(){
 
 	//Problem 4
 	char turntabl[] {'t', 'u', 'r', 'n', 't','a', 'b','l', '\0'}; 
-    char dawud[] {'d', 'a', 'w', 'u', 'd','\0'}; 
+    	char dawud[] {'d', 'a', 'w', 'u', 'd','\0'}; 
 
-    std::cout << "The longest char * is: " <<  longestChars( turntabl, dawud) << std::endl; 	
-
+    	std::cout << "The longest char * is: " <<  longestChars( turntabl, dawud) << std::endl; 	
 }
